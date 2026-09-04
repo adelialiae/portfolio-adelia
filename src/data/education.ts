@@ -2,7 +2,7 @@ import { EducationItem } from '@/types';
 
 export const educationData: EducationItem = {
   university: "Universitas Pembangunan Nasional \"Veteran\" Jawa Timur",
-  degree: "Sarjana Sistem Informasi (S.Kom)",
+  degree: "Sarjana Komputer (S.Kom)",
   period: "2022 – 2026",
   gpa: "3.84 / 4.0",
   coursework: [

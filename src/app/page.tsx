@@ -4,7 +4,6 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import Projects from '@/components/Projects';
-import Methodology from '@/components/Methodology';
 import Experience from '@/components/Experience';
 import Organization from '@/components/Organization';
 import Education from '@/components/Education';
@@ -22,7 +21,6 @@ export default function Home() {
         <About />
         <Services />
         <Projects />
-        <Methodology />
         <Experience />
         <Organization />
         <Education />

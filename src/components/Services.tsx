@@ -43,30 +43,7 @@ const services = [
     badgeText: 'Core Specialty',
     tags: ['Pentaho Kettle', 'Star Schema', 'OLAP Cube']
   },
-  {
-    id: 4,
-    title: 'Database Management & SQL Optimization',
-    description: 'Structuring relational databases, writing complex queries, subqueries, stored procedures, and fine-tuning query performance.',
-    icon: Database,
-    featured: false,
-    tags: ['PostgreSQL', 'MySQL', 'Query Tuning']
-  },
-  {
-    id: 5,
-    title: 'Web Application Development',
-    description: 'Developing data-driven back-end logic and responsive user interfaces using PHP, Laravel, HTML5, CSS3, and Bootstrap.',
-    icon: Code2,
-    featured: false,
-    tags: ['PHP / Laravel', 'Bootstrap', 'REST API']
-  },
-  {
-    id: 6,
-    title: 'Data Quality & Governance',
-    description: 'Ensuring high precision, consistency, missing-value handling, and anomaly detection across enterprise datasets.',
-    icon: ShieldCheck,
-    featured: false,
-    tags: ['Data Cleansing', 'Validation Rules', 'Integrity Check']
-  }
+
 ];
 
 export default function Services() {
@@ -169,15 +146,6 @@ export default function Services() {
                       </span>
                     ))}
                   </div>
-
-                  {/* Link CTA */}
-                  <Link
-                    href="#projects"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 group"
-                  >
-                    <span>View Related Projects</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
                 </div>
               </motion.div>
             );
@@ -194,7 +162,7 @@ export default function Services() {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-slate-200 dark:divide-slate-800">
             <div className="pt-4 md:pt-0">
-              <div className="text-3xl font-extrabold font-mono text-slate-900 dark:text-white">15+</div>
+              <div className="text-3xl font-extrabold font-mono text-slate-900 dark:text-white">3</div>
               <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">Projects Delivered</div>
             </div>
             <div className="pt-4 md:pt-0">
@@ -202,7 +170,7 @@ export default function Services() {
               <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">Analytics Accuracy</div>
             </div>
             <div className="pt-4 md:pt-0">
-              <div className="text-3xl font-extrabold font-mono text-slate-900 dark:text-white">4+</div>
+              <div className="text-3xl font-extrabold font-mono text-slate-900 dark:text-white">4</div>
               <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">Years Active Studies</div>
             </div>
             <div className="pt-4 md:pt-0">

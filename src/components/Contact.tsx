@@ -166,7 +166,7 @@ export default function Contact() {
                   <div className="text-[10px] text-slate-400 font-medium">Academic IPK</div>
                 </div>
                 <div className="p-2.5 rounded-xl bg-slate-800/40">
-                  <div className="text-lg font-bold font-mono text-blue-400">15+</div>
+                  <div className="text-lg font-bold font-mono text-blue-400">3</div>
                   <div className="text-[10px] text-slate-400 font-medium">Projects</div>
                 </div>
               </div>

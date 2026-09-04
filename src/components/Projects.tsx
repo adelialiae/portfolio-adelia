@@ -11,35 +11,29 @@ import {
   Terminal, 
   Calendar, 
   Building2, 
-  Workflow, 
   ExternalLink,
   ImageIcon,
   Sparkles,
-  SearchCode,
   ArrowRight,
-  Eye,
   Star
 } from 'lucide-react';
 import FeaturedProject from './FeaturedProject';
-import { otherProjectsData, academicProjectsData, featuredProjectData } from '@/data/projects';
+import { otherProjectsData } from '@/data/projects';
 
 const filterCategories = [
   { id: 'all', label: 'All Projects' },
   { id: 'data-warehouse', label: 'Data Warehouse & ETL' },
   { id: 'bi-analytics', label: 'Data Analytics & BI' },
-  { id: 'python', label: 'Python & Scraping' },
-  { id: 'academic', label: 'Academic Projects' },
 ];
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('all');
   const celeratesProject = otherProjectsData.find(p => p.id === 'celerates-program');
-  const sentimentProject = otherProjectsData.find(p => p.id === 'sentiment-analysis-tring');
+  const tableauProject = otherProjectsData.find(p => p.id === 'customer-complaint-tableau-dashboard');
+  const northwindProject = otherProjectsData.find(p => p.id === 'northwind-executive-summary-tableau');
 
   const showDW = activeFilter === 'all' || activeFilter === 'data-warehouse';
   const showBI = activeFilter === 'all' || activeFilter === 'bi-analytics';
-  const showPython = activeFilter === 'all' || activeFilter === 'python';
-  const showAcademic = activeFilter === 'all' || activeFilter === 'academic';
 
   return (
     <section id="projects" className="py-20 lg:py-28 bg-slate-50/60 dark:bg-slate-900/40 border-y border-slate-200/60 dark:border-slate-800/60 relative overflow-hidden">
@@ -197,8 +191,8 @@ export default function Projects() {
             </motion.div>
           )}
 
-          {/* Sentiment Analysis Project Card */}
-          {showPython && sentimentProject && (
+          {/* Tableau Public Customer Complaint Dashboard */}
+          {showBI && tableauProject && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -206,123 +200,126 @@ export default function Projects() {
               className="orbit-card rounded-3xl p-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between relative overflow-hidden group shadow-sm hover:shadow-xl"
             >
               <div className="space-y-4">
-                {/* Category */}
                 <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
-                  <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-semibold">
-                    {sentimentProject.category}
+                  <span className="px-3 py-1 rounded-full bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-500/20 font-semibold">
+                    {tableauProject.category}
                   </span>
-                  <span className="flex items-center gap-1 text-slate-400">
-                    <SearchCode className="w-3.5 h-3.5 text-cyan-400" />
-                    Google Play Store Scraping
-                  </span>
+                  <span className="text-slate-400">Tableau Public</span>
                 </div>
 
-                {/* Title */}
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
-                    {sentimentProject.title}
+                    {tableauProject.title}
                   </h3>
                   <p className="text-xs font-mono text-slate-500 mt-1">
-                    Python NLP &amp; Customer Review Mining
+                    {tableauProject.subtitle}
                   </p>
                 </div>
 
                 <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                  {sentimentProject.description}
+                  {tableauProject.description}
                 </p>
 
-                {/* Analysis Pipeline */}
-                {sentimentProject.workflow && (
-                  <div className="space-y-2 pt-1">
-                    <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold">Analysis Pipeline:</span>
-                    <div className="flex flex-wrap items-center gap-1.5">
-                      {sentimentProject.workflow.map((step, idx) => (
-                        <React.Fragment key={step}>
-                          <span className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-[11px] font-mono text-slate-700 dark:text-slate-300 font-medium">
-                            {step}
-                          </span>
-                          {idx < (sentimentProject.workflow?.length || 0) - 1 && (
-                            <span className="text-emerald-500 text-xs font-bold font-mono">→</span>
-                          )}
-                        </React.Fragment>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                <div className="overflow-hidden rounded-2xl border border-blue-500/20 bg-slate-100 dark:bg-slate-950">
+                  <img
+                    src="/images/customer-complaint-dashboard.png"
+                    alt="Customer Complaint dashboard created with Tableau"
+                    className="h-52 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
 
-                {/* Technologies */}
-                {sentimentProject.technologies && (
-                  <div className="space-y-1.5 pt-2">
-                    <span className="text-[11px] font-mono text-slate-400 uppercase font-semibold">Libraries &amp; Tech:</span>
-                    <div className="flex flex-wrap gap-1.5">
-                      {sentimentProject.technologies.map((tech) => (
-                        <span key={tech} className="text-xs font-mono px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 font-medium">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                {tableauProject.technologies && (
+                  <div className="flex flex-wrap gap-1.5">
+                    {tableauProject.technologies.map((technology) => (
+                      <span key={technology} className="text-xs font-mono px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20 font-medium">
+                        {technology}
+                      </span>
+                    ))}
                   </div>
                 )}
               </div>
 
-              {/* Bottom Placeholder / Meta Bar */}
-              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
-                <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-medium">
-                  <ImageIcon className="w-3.5 h-3.5" />
-                  {sentimentProject.placeholders?.image}
-                </span>
-                <span>Tring Reviews Dataset</span>
+              {tableauProject.placeholders?.link && (
+                <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+                  <a
+                    href={tableauProject.placeholders.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Lihat Dashboard di Tableau Public
+                  </a>
+                </div>
+              )}
+            </motion.div>
+          )}
+
+          {/* Tableau Public Northwind Executive Summary */}
+          {showBI && northwindProject && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="orbit-card rounded-3xl p-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between relative overflow-hidden group shadow-sm hover:shadow-xl"
+            >
+              <div className="space-y-4">
+                <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
+                  <span className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border border-cyan-500/20 font-semibold">
+                    {northwindProject.category}
+                  </span>
+                  <span className="text-slate-400">Tableau Public</span>
+                </div>
+
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
+                    {northwindProject.title}
+                  </h3>
+                  <p className="text-xs font-mono text-slate-500 mt-1">
+                    {northwindProject.subtitle}
+                  </p>
+                </div>
+
+                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  {northwindProject.description}
+                </p>
+
+                <div className="overflow-hidden rounded-2xl border border-cyan-500/20 bg-slate-100 dark:bg-slate-950">
+                  <img
+                    src="/images/northwind-executive-summary.png"
+                    alt="Northwind Executive Summary dashboard created with Tableau"
+                    className="h-52 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+
+                {northwindProject.technologies && (
+                  <div className="flex flex-wrap gap-1.5">
+                    {northwindProject.technologies.map((technology) => (
+                      <span key={technology} className="text-xs font-mono px-2.5 py-1 rounded-lg bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border border-cyan-500/20 font-medium">
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
+
+              {northwindProject.placeholders?.link && (
+                <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+                  <a
+                    href={northwindProject.placeholders.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Lihat Dashboard di Tableau Public
+                  </a>
+                </div>
+              )}
             </motion.div>
           )}
 
         </div>
-
-        {/* 3. Academic Projects Grid */}
-        {showAcademic && (
-          <div className="space-y-6 pt-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-white">
-                <Terminal className="w-5 h-5 text-indigo-500" />
-                <span>Academic Projects &amp; Web Systems</span>
-              </div>
-              <span className="text-xs font-mono text-slate-400">UPN &ldquo;Veteran&rdquo; Jawa Timur</span>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {academicProjectsData.map((acad, idx) => (
-                <motion.div
-                  key={acad.id}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="orbit-card rounded-2xl p-6 flex flex-col justify-between bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm"
-                >
-                  <div className="space-y-3">
-                    <span className="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
-                      {acad.category}
-                    </span>
-                    <h4 className="text-base font-bold text-slate-900 dark:text-white">
-                      {acad.title}
-                    </h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                      {acad.description}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-1.5">
-                    {acad.tools.map(tool => (
-                      <span key={tool} className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        )}
 
         {/* Orbit Style CTA Section Banner */}
         <motion.div

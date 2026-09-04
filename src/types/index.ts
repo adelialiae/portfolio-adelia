@@ -109,5 +109,8 @@ export interface CertificationItem {
   issuer: string;
   year: string;
   placeholder: string;
+  score?: string;
+  validity?: string;
+  verificationLabel?: string;
 }
 

@@ -39,7 +39,7 @@ export default function Hero() {
             
             {/* Orbit Hero Tag Badge */}
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="hero-tag"
@@ -54,7 +54,7 @@ export default function Hero() {
 
             {/* Orbit Main Headline */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="space-y-4"
@@ -75,7 +75,7 @@ export default function Hero() {
 
             {/* Quick Education Badge Pill */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-wrap items-center gap-3 pt-1 text-xs text-slate-600 dark:text-slate-400"
@@ -92,7 +92,7 @@ export default function Hero() {
 
             {/* Orbit Dual Action Buttons (CTA) */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-wrap items-center gap-4 pt-2"
@@ -126,7 +126,7 @@ export default function Hero() {
 
             {/* Social Links Row */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-800/80 text-slate-600 dark:text-slate-400 text-xs"
@@ -163,7 +163,7 @@ export default function Hero() {
 
           {/* Right Column: Orbit 2x2 Stat Cards Grid & Interactive Pipeline */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 1, scale: 1 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-5 space-y-6"
@@ -177,7 +177,7 @@ export default function Hero() {
                   <Rocket className="w-6 h-6" />
                 </div>
                 <div className="text-3xl font-extrabold font-mono text-slate-900 dark:text-white">
-                  15+
+                  3
                 </div>
                 <div className="text-xs font-semibold text-cyan-600 dark:text-cyan-400 mt-1">
                   Projects &amp; Dashboards
@@ -209,7 +209,7 @@ export default function Hero() {
                   <Layers className="w-6 h-6" />
                 </div>
                 <div className="text-3xl font-extrabold font-mono text-slate-900 dark:text-white">
-                  5+
+                  2
                 </div>
                 <div className="text-xs font-semibold text-slate-700 dark:text-slate-300 mt-1">
                   Certifications &amp; Badges

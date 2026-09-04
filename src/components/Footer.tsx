@@ -26,7 +26,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed max-w-sm">
-              Sarjana Sistem Informasi berfokus pada Data Analytics, Business Intelligence, perancangan Data Warehouse, dan arsitektur ETL.
+              Sarjana Komputer berfokus pada Data Analytics, Business Intelligence, perancangan Data Warehouse, dan arsitektur ETL.
             </p>
             <div className="flex items-center gap-2.5 pt-2">
               <a
@@ -81,11 +81,6 @@ export default function Footer() {
               <li>
                 <Link href="#projects" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
                   Portfolio
-                </Link>
-              </li>
-              <li>
-                <Link href="#methodology" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
-                  Methodology
                 </Link>
               </li>
             </ul>

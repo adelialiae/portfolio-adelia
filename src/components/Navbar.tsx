@@ -11,7 +11,6 @@ const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Portfolio', href: '#projects' },
-  { label: 'Methodology', href: '#methodology' },
   { label: 'Experience', href: '#experience' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
@@ -94,7 +93,7 @@ export default function Navbar() {
           </nav>
 
           {/* Orbit-style Actions & Get Started CTA */}
-          <div className="hidden sm:flex items-center space-x-3">
+          <div className="hidden lg:flex items-center space-x-3">
             <a
               href={profileData.socialLinks.github}
               target="_blank"

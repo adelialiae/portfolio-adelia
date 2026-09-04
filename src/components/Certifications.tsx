@@ -7,7 +7,7 @@ import { certificationsData } from '@/data/certifications';
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="py-20 lg:py-28 bg-slate-50/50 dark:bg-slate-900/30 border-t border-slate-200/60 dark:border-slate-800/60 relative">
+    <section id="certifications" className="py-20 lg:py-28 bg-white dark:bg-slate-950 border-t border-slate-200/60 dark:border-slate-800/60 relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -74,6 +74,31 @@ export default function Certifications() {
                   </p>
                 </div>
 
+                {(cert.score || cert.validity) && (
+                  <div className="grid grid-cols-2 gap-3">
+                    {cert.score && (
+                      <div className="rounded-xl bg-cyan-500/10 border border-cyan-500/20 p-3">
+                        <div className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                          Score
+                        </div>
+                        <div className="text-2xl font-bold font-mono text-cyan-700 dark:text-cyan-300">
+                          {cert.score}
+                        </div>
+                      </div>
+                    )}
+                    {cert.validity && (
+                      <div className="rounded-xl bg-slate-100 dark:bg-slate-800 p-3">
+                        <div className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                          Validity
+                        </div>
+                        <div className="text-sm font-semibold font-mono text-slate-700 dark:text-slate-200 mt-1">
+                          {cert.validity}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+
                 {/* Certificate Image Placeholder Frame */}
                 <div className="rounded-xl border-2 border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/60 p-6 text-center flex flex-col items-center justify-center space-y-2">
                   <ImageIcon className="w-6 h-6 text-slate-400" />
@@ -85,7 +110,7 @@ export default function Certifications() {
 
               <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center gap-1.5 text-xs text-emerald-600 dark:text-emerald-400 font-mono">
                 <CheckCircle2 className="w-4 h-4" />
-                <span>BNSP Certified Professional</span>
+                <span>{cert.verificationLabel || 'BNSP Certified Professional'}</span>
               </div>
             </motion.div>
           ))}

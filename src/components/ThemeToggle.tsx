@@ -39,7 +39,12 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="w-9 h-9 rounded-lg border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-400" />
+      <div
+        className="w-9 h-9 rounded-lg border border-slate-800 bg-slate-900/50 flex items-center justify-center text-slate-400"
+        aria-hidden="true"
+      >
+        <Moon className="w-4 h-4" />
+      </div>
     );
   }
 

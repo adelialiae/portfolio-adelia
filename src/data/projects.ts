@@ -122,22 +122,25 @@ export const otherProjectsData: ProjectItem[] = [
     }
   },
   {
-    id: "sentiment-analysis-tring",
-    title: "Sentiment Analysis of Tring Application Reviews",
-    category: "Data Analytics / Python",
-    description: "Melakukan web scraping untuk mengumpulkan dan menganalisis ulasan pengguna aplikasi Tring dari Google Play Store sebagai bahan analisis sentimen dan evaluasi aplikasi.",
-    technologies: ["Python", "Web Scraping", "Sentiment Analysis"],
-    workflow: [
-      "Google Play Store",
-      "Web Scraping",
-      "Review Dataset",
-      "Data Analysis",
-      "Sentiment Analysis",
-      "Application Evaluation"
-    ],
+    id: "customer-complaint-tableau-dashboard",
+    title: "Customer Complaint Dashboard",
+    subtitle: "Tableau Public Dashboard",
+    category: "Data Analytics / Business Intelligence",
+    description: "Membuat dashboard interaktif menggunakan Tableau Public untuk menganalisis dan memvisualisasikan data complaint customer.",
+    technologies: ["Tableau Public", "Data Visualization", "Customer Complaint Analysis"],
     placeholders: {
-      image: "[ADD DASHBOARD SCREENSHOT]",
-      link: "[ADD LINK]"
+      link: "https://public.tableau.com/views/Tugas_AdeliaPutriP_22082010034_ComplaintA/Home?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+    }
+  },
+  {
+    id: "northwind-executive-summary-tableau",
+    title: "Northwind Executive Summary",
+    subtitle: "Tableau Public Dashboard",
+    category: "Data Analytics / Business Intelligence",
+    description: "Membuat executive summary interaktif menggunakan Tableau Public untuk menyajikan ringkasan analisis data Northwind.",
+    technologies: ["Tableau Public", "Executive Dashboard", "Data Visualization"],
+    placeholders: {
+      link: "https://public.tableau.com/views/Book1_17319793044970/NorthwindExecutiveSummary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
     }
   }
 ];

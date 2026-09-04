@@ -159,7 +159,7 @@ export default function About() {
                 <div className="text-[11px] font-medium text-slate-500 dark:text-slate-400 mt-1">Academic IPK</div>
               </div>
               <div className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center">
-                <div className="text-2xl sm:text-3xl font-extrabold font-mono text-blue-600 dark:text-blue-400">85%</div>
+                <div className="text-2xl sm:text-3xl font-extrabold font-mono text-blue-600 dark:text-blue-400">98%</div>
                 <div className="text-[11px] font-medium text-slate-500 dark:text-slate-400 mt-1">Data Precision</div>
               </div>
             </div>

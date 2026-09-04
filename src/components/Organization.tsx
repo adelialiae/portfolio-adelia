@@ -7,7 +7,7 @@ import { organizationData } from '@/data/organization';
 
 export default function Organization() {
   return (
-    <section id="organization" className="py-20 lg:py-28 relative">
+    <section id="organization" className="py-20 lg:py-28 bg-slate-50/50 dark:bg-slate-900/30 border-t border-slate-200/60 dark:border-slate-800/60 relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
