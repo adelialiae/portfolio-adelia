@@ -32,9 +32,10 @@ export const featuredProjectData: FeaturedProject = {
     "Mengintegrasikan komponen Business Intelligence ke dalam satu sistem"
   ],
   placeholders: {
-    dashboard: "[ADD DASHBOARD SCREENSHOT]",
-    system: "[ADD SYSTEM SCREENSHOT]",
-    dataWarehouse: "[ADD DATA WAREHOUSE DIAGRAM]"
+    dashboard: "/images/dashboard-skripsi.png",
+    olap: "/images/olap.png",
+    system: "/images/beranda-sadaya.png",
+    dataWarehouse: "/images/etl-job.png"
   },
   caseStudy: [
     {
@@ -105,7 +106,7 @@ export const otherProjectsData: ProjectItem[] = [
     organization: "PT. Mitra Talenta Grup",
     period: "September 2024 – Desember 2024",
     category: "Data Analytics / Business Intelligence",
-    description: "Program Studi Independen Bersertifikat dengan fokus pada Data Analyst dan Business Intelligence.",
+    description: "Mengikuti Studi Independen Bersertifikat Celerates Acceleration Program – Data Analyst & Business Intelligence dengan database DVD Rental sebagai studi kasus, meliputi proses ETL menggunakan Pentaho, perancangan data mart menggunakan PostgreSQL, serta pengembangan dashboard interaktif menggunakan Tableau dan Power BI.",
     skills: [
       "SQL",
       "Data Warehouse",
@@ -117,8 +118,9 @@ export const otherProjectsData: ProjectItem[] = [
     finalProjectInfo: "Analisis data end-to-end yang mencakup proses ETL, perancangan dan implementasi Data Warehouse, serta penyajian insight dalam bentuk dashboard interaktif.",
     tools: ["PostgreSQL", "Pentaho", "Tableau", "Power BI"],
     placeholders: {
-      image: "[ADD DASHBOARD SCREENSHOT]",
-      link: "[ADD LINK]"
+      image: "/images/dashboard-dvd.png",
+      dataWarehouse: "/images/datamart-dvd.png",
+      link: "https://public.tableau.com/views/MoviePopularityAnalysisinDVDRentalsbyFrequency/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
     }
   },
   {
@@ -126,9 +128,10 @@ export const otherProjectsData: ProjectItem[] = [
     title: "Customer Complaint Dashboard",
     subtitle: "Tableau Public Dashboard",
     category: "Data Analytics / Business Intelligence",
-    description: "Membuat dashboard interaktif menggunakan Tableau Public untuk menganalisis dan memvisualisasikan data complaint customer.",
+    description: "Dashboard analisis keluhan pelanggan (Customer Complaint) berbasis Tableau yang menyajikan ringkasan performa layanan melalui total keluhan, status penanganan, tren historis, serta distribusi geografis. Dashboard ini dirancang untuk memberikan gambaran menyeluruh mengenai efisiensi operasional layanan pelanggan, mengidentifikasi saluran komplain paling dominan, serta mengevaluasi ketepatan waktu respons bisnis (Timely Responses).",
     technologies: ["Tableau Public", "Data Visualization", "Customer Complaint Analysis"],
     placeholders: {
+      detailImage: "/images/detail-status.png",
       link: "https://public.tableau.com/views/Tugas_AdeliaPutriP_22082010034_ComplaintA/Home?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
     }
   },
@@ -137,10 +140,22 @@ export const otherProjectsData: ProjectItem[] = [
     title: "Northwind Executive Summary",
     subtitle: "Tableau Public Dashboard",
     category: "Data Analytics / Business Intelligence",
-    description: "Membuat executive summary interaktif menggunakan Tableau Public untuk menyajikan ringkasan analisis data Northwind.",
+    description: "Dashboard analisis penjualan berbasis Tableau yang menyajikan ringkasan performa bisnis melalui tren quantity, pendapatan berdasarkan kategori produk, supplier dengan kontribusi terbesar, serta distribusi biaya pengiriman berdasarkan perusahaan ekspedisi. Dashboard dirancang untuk memberikan gambaran menyeluruh mengenai performa penjualan dan operasional serta membantu mengidentifikasi kategori, supplier, dan periode dengan kontribusi terbesar.",
     technologies: ["Tableau Public", "Executive Dashboard", "Data Visualization"],
     placeholders: {
       link: "https://public.tableau.com/views/Book1_17319793044970/NorthwindExecutiveSummary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+    }
+  },
+  {
+    id: "sku-usage-dashboard",
+    title: "Dashboard Analyst - Analisis Penggunaan SKU",
+    subtitle: "Data Analyst & Business Intelligence",
+    category: "Data Analytics / Business Intelligence",
+    description: "Dashboard interaktif untuk memantau dan menganalisis penggunaan SKU pada WH Surabaya dan WH Jakbar. Data diolah dari Excel dan divisualisasikan menggunakan Looker Studio untuk menghasilkan informasi mengenai volume penggunaan, rata-rata pemakaian harian, serta ranking SKU berdasarkan tingkat penggunaannya. Melalui dashboard ini, pengguna dapat melakukan eksplorasi data berdasarkan periode waktu dan gudang, serta mengidentifikasi SKU dengan penggunaan tertinggi melalui tabel ranking dan visualisasi Top 20 SKU.",
+    tools: ["Microsoft Excel", "Looker Studio"],
+    placeholders: {
+      image: "/images/sku-usage-dashboard.png",
+      link: "https://datastudio.google.com/reporting/95c9e57e-f34c-4090-af54-c8ae36677aad"
     }
   }
 ];

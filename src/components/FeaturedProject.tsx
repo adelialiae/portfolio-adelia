@@ -4,10 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Sparkles, 
-  CheckCircle, 
-  Database, 
-  Layers, 
-  Cpu
+  CheckCircle
 } from 'lucide-react';
 import { featuredProjectData } from '@/data/projects';
 
@@ -26,7 +23,7 @@ export default function FeaturedProject() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Column: Case Study Header & Details */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-5 space-y-6">
             
             {/* Top Tag & Category */}
             <div className="flex flex-wrap items-center gap-2">
@@ -100,36 +97,55 @@ export default function FeaturedProject() {
           </div>
 
           {/* Right Column: Visual Architecture Preview & Standardized Placeholders */}
-          <div className="lg:col-span-5 space-y-4">
+          <div className="lg:col-span-7 space-y-4">
             
-            {/* Dashboard Screenshot Placeholder Card */}
-            <div className="rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-700/80 bg-slate-50 dark:bg-slate-950/70 p-6 flex flex-col items-center justify-center text-center relative overflow-hidden group/preview min-h-[220px]">
-              <div className="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-3">
-                <Database className="w-6 h-6" />
+            {/* Dashboard and OLAP Screenshots */}
+            <div className="grid grid-cols-2 gap-3 items-start">
+              <div className="rounded-2xl border border-slate-300 dark:border-slate-700/80 bg-slate-50 dark:bg-slate-950/70 p-2 relative overflow-hidden group/preview">
+                <img
+                  src={featuredProjectData.placeholders.dashboard}
+                  alt="Business Intelligence dashboard for academic data"
+                  className="block w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover/preview:scale-[1.02]"
+                />
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2 text-center">
+                  Dashboard
+                </p>
               </div>
-              <div className="px-3 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/40 text-cyan-700 dark:text-cyan-300 font-mono text-xs font-bold tracking-wider">
-                {featuredProjectData.placeholders.dashboard}
+
+              <div className="rounded-2xl border border-slate-300 dark:border-slate-700/80 bg-slate-50 dark:bg-slate-950/70 p-2 relative overflow-hidden group/preview">
+                <img
+                  src={featuredProjectData.placeholders.olap}
+                  alt="OLAP analysis visualization"
+                  className="block w-full h-auto rounded-xl object-contain transition-transform duration-500 group-hover/preview:scale-[1.02]"
+                />
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2 text-center">
+                  OLAP Analysis
+                </p>
               </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 max-w-xs">
-                Interactive Metabase &amp; Mondrian OLAP Dashboard visualization
-              </p>
-              
             </div>
 
-            {/* Mini Placeholders Grid */}
+            {/* Supporting Screenshots */}
             <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-xl border border-dashed border-slate-300 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/40 p-3.5 text-center flex flex-col items-center justify-center">
-                <Layers className="w-5 h-5 text-indigo-500 dark:text-indigo-400 mb-1.5" />
-                <span className="font-mono text-[10px] text-slate-600 dark:text-slate-300 font-semibold">
-                  {featuredProjectData.placeholders.dataWarehouse}
-                </span>
+              <div className="rounded-xl border border-slate-300 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/40 p-2 overflow-hidden">
+                <img
+                  src={featuredProjectData.placeholders.dataWarehouse}
+                  alt="Academic data warehouse diagram"
+                  className="block w-full h-auto rounded-lg object-contain"
+                />
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2 text-center">
+                  ETL Job
+                </p>
               </div>
 
-              <div className="rounded-xl border border-dashed border-slate-300 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/40 p-3.5 text-center flex flex-col items-center justify-center">
-                <Cpu className="w-5 h-5 text-purple-500 dark:text-purple-400 mb-1.5" />
-                <span className="font-mono text-[10px] text-slate-600 dark:text-slate-300 font-semibold">
-                  {featuredProjectData.placeholders.system}
-                </span>
+              <div className="rounded-xl border border-slate-300 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/40 p-2 overflow-hidden">
+                <img
+                  src={featuredProjectData.placeholders.system}
+                  alt="Academic data analysis system home page"
+                  className="block w-full h-auto rounded-lg object-contain"
+                />
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2 text-center">
+                  System Application
+                </p>
               </div>
             </div>
 

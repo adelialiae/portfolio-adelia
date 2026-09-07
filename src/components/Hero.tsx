@@ -60,11 +60,11 @@ export default function Hero() {
               className="space-y-4"
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]">
-                Crafting Actionable Data &amp;{' '}
+                Hai, I&apos;m{' '}
                 <span className="bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 bg-clip-text text-transparent">
-                  Business Intelligence
-                </span>{' '}
-                Solutions<span className="text-cyan-500">.</span>
+                  Adelia Putri Pratiwi
+                </span>
+                <span className="text-cyan-500">.</span>
               </h1>
 
               {/* Subheadline & Lead */}
@@ -166,10 +166,19 @@ export default function Hero() {
             initial={{ opacity: 1, scale: 1 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-5 space-y-6"
+            className="contents"
           >
+            {/* Formal Portrait */}
+            <div className="flex justify-center lg:col-start-9 lg:col-span-4 lg:justify-end">
+              <img
+                src="/images/foto-formal-berdiri.png"
+                alt="Adelia Putri Pratiwi formal portrait"
+                className="block h-auto max-h-[430px] w-auto max-w-full rounded-2xl border border-cyan-500/20 object-contain drop-shadow-2xl"
+              />
+            </div>
+
             {/* Orbit 2x2 Stats Grid */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 lg:col-span-12 lg:grid-cols-4">
               
               {/* Stat Card 1: Primary */}
               <div className="orbit-card p-6 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-blue-600/10 border-cyan-500/30 relative overflow-hidden group">
@@ -243,7 +252,7 @@ export default function Hero() {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
-                className="overflow-hidden pt-2"
+                className="overflow-hidden pt-2 lg:col-span-12"
               >
                 <DataPipelineVisual />
               </motion.div>

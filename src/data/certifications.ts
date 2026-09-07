@@ -6,7 +6,8 @@ export const certificationsData: CertificationItem[] = [
     issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
     year: "2025",
     validity: "2025 – 2028",
-    placeholder: "[ADD CERTIFICATE IMAGE]"
+    placeholder: "[ADD CERTIFICATE IMAGE]",
+    certificateLink: "https://drive.google.com/file/d/18y0k7hJ6QS3mi8B_0Et0tSVqeNcnlhRr/view?usp=sharing"
   },
   {
     title: "English Proficiency Test",
@@ -15,7 +16,8 @@ export const certificationsData: CertificationItem[] = [
     score: "453",
     validity: "2026 – 2028",
     placeholder: "[ADD EPT CERTIFICATE IMAGE]",
-    verificationLabel: "English Proficiency Certificate"
+    verificationLabel: "English Proficiency Certificate",
+    certificateLink: "https://drive.google.com/file/d/1xGDp-9bPZi3pw4Ql6ECsaMEISUBVFqtJ/view?usp=sharing"
   }
 ];
 

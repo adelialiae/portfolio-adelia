@@ -40,6 +40,7 @@ export interface FeaturedProject {
   details: string[];
   placeholders: {
     dashboard?: string;
+    olap?: string;
     system?: string;
     dataWarehouse?: string;
   };
@@ -61,6 +62,8 @@ export interface ProjectItem {
   workflow?: string[];
   placeholders?: {
     image?: string;
+    dataWarehouse?: string;
+    detailImage?: string;
     link?: string;
   };
 }
@@ -80,6 +83,7 @@ export interface ExperienceItem {
   period: string;
   details: string[];
   tools?: string[];
+  certificateLink?: string;
 }
 
 export interface OrganizationItem {
@@ -112,5 +116,6 @@ export interface CertificationItem {
   score?: string;
   validity?: string;
   verificationLabel?: string;
+  certificateLink?: string;
 }
 

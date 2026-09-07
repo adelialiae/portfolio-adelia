@@ -12,7 +12,6 @@ import {
   Calendar, 
   Building2, 
   ExternalLink,
-  ImageIcon,
   Sparkles,
   ArrowRight,
   Star
@@ -31,6 +30,7 @@ export default function Projects() {
   const celeratesProject = otherProjectsData.find(p => p.id === 'celerates-program');
   const tableauProject = otherProjectsData.find(p => p.id === 'customer-complaint-tableau-dashboard');
   const northwindProject = otherProjectsData.find(p => p.id === 'northwind-executive-summary-tableau');
+  const skuProject = otherProjectsData.find(p => p.id === 'sku-usage-dashboard');
 
   const showDW = activeFilter === 'all' || activeFilter === 'data-warehouse';
   const showBI = activeFilter === 'all' || activeFilter === 'bi-analytics';
@@ -178,16 +178,47 @@ export default function Projects() {
                     </div>
                   </div>
                 )}
+
+                {celeratesProject.placeholders?.image && (
+                  <div className="overflow-hidden rounded-2xl border border-cyan-500/20 bg-slate-100 dark:bg-slate-950">
+                    <img
+                      src={celeratesProject.placeholders.image}
+                      alt="DVD Rental dashboard created for the Celerates project"
+                      className="block h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                    <p className="px-3 py-2 text-center text-[11px] text-slate-500 dark:text-slate-400">
+                      Dashboard DVD Rental
+                    </p>
+                  </div>
+                )}
+
+                {celeratesProject.placeholders?.dataWarehouse && (
+                  <div className="overflow-hidden rounded-2xl border border-cyan-500/20 bg-slate-100 dark:bg-slate-950">
+                    <img
+                      src={celeratesProject.placeholders.dataWarehouse}
+                      alt="DVD Rental data mart design for the Celerates project"
+                      className="block h-auto w-full object-contain"
+                    />
+                    <p className="px-3 py-2 text-center text-[11px] text-slate-500 dark:text-slate-400">
+                      Data Warehouse / Data Mart
+                    </p>
+                  </div>
+                )}
               </div>
 
-              {/* Bottom Placeholder / Meta Bar */}
-              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-mono">
-                <span className="flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 font-medium">
-                  <ImageIcon className="w-3.5 h-3.5" />
-                  {celeratesProject.placeholders?.image}
-                </span>
-                <span>PT. Mitra Talenta Grup</span>
-              </div>
+              {celeratesProject.placeholders?.link && (
+                <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+                  <a
+                    href={celeratesProject.placeholders.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Lihat Dashboard di Tableau Public
+                  </a>
+                </div>
+              )}
             </motion.div>
           )}
 
@@ -224,9 +255,19 @@ export default function Projects() {
                   <img
                     src="/images/customer-complaint-dashboard.png"
                     alt="Customer Complaint dashboard created with Tableau"
-                    className="h-52 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                    className="block h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                 </div>
+
+                {tableauProject.placeholders?.detailImage && (
+                  <div className="overflow-hidden rounded-2xl border border-blue-500/20 bg-slate-100 dark:bg-slate-950">
+                    <img
+                      src={tableauProject.placeholders.detailImage}
+                      alt="Customer Complaint dashboard detail status"
+                      className="block h-auto w-full object-contain"
+                    />
+                  </div>
+                )}
 
                 {tableauProject.technologies && (
                   <div className="flex flex-wrap gap-1.5">
@@ -288,7 +329,7 @@ export default function Projects() {
                   <img
                     src="/images/northwind-executive-summary.png"
                     alt="Northwind Executive Summary dashboard created with Tableau"
-                    className="h-52 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                    className="block h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                 </div>
 
@@ -313,6 +354,72 @@ export default function Projects() {
                   >
                     <ExternalLink className="w-4 h-4" />
                     Lihat Dashboard di Tableau Public
+                  </a>
+                </div>
+              )}
+            </motion.div>
+          )}
+
+          {/* SKU Usage Dashboard */}
+          {showBI && skuProject && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="orbit-card rounded-3xl p-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between relative overflow-hidden group shadow-sm hover:shadow-xl"
+            >
+              <div className="space-y-4">
+                <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
+                  <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 font-semibold">
+                    {skuProject.category}
+                  </span>
+                  <span className="text-slate-400">Looker Studio Dashboard</span>
+                </div>
+
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-tight">
+                    {skuProject.title}
+                  </h3>
+                  <p className="text-xs font-mono text-slate-500 mt-1">
+                    {skuProject.subtitle}
+                  </p>
+                </div>
+
+                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  {skuProject.description}
+                </p>
+
+                {skuProject.placeholders?.image && (
+                  <div className="overflow-hidden rounded-2xl border border-emerald-500/20 bg-slate-100 dark:bg-slate-950">
+                    <img
+                      src={skuProject.placeholders.image}
+                      alt="Dashboard analisis penggunaan SKU"
+                      className="block h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  </div>
+                )}
+
+                {skuProject.tools && (
+                  <div className="flex flex-wrap gap-1.5">
+                    {skuProject.tools.map((tool) => (
+                      <span key={tool} className="text-xs font-mono px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 font-medium">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {skuProject.placeholders?.link && (
+                <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+                  <a
+                    href={skuProject.placeholders.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 dark:hover:text-emerald-300 transition-colors"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Lihat Dashboard
                   </a>
                 </div>
               )}

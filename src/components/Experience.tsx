@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, CheckCircle2, Building2 } from 'lucide-react';
+import { Briefcase, Calendar, CheckCircle2, Building2, ExternalLink } from 'lucide-react';
 import { experienceData } from '@/data/experience';
 
 export default function Experience() {
@@ -98,6 +98,20 @@ export default function Experience() {
                         {tool}
                       </span>
                     ))}
+                  </div>
+                )}
+
+                {item.certificateLink && (
+                  <div className="mt-4">
+                    <a
+                      href={item.certificateLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-xs font-semibold text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      Lihat Sertifikat
+                    </a>
                   </div>
                 )}
               </div>
